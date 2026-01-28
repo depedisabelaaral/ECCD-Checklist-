@@ -1,0 +1,7 @@
+{
+  "name": "ECCD Checklist & Management System",
+  "description": "A comprehensive Early Childhood Care and Development (ECCD) management platform for schools and administrators to track learner progress, generate reports, and consolidate data across districts.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
