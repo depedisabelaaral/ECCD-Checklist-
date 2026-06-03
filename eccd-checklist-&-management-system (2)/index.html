@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECCD Checklist System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      @media print {
+        @page {
+          size: auto; /* Handled by dynamic style injector in component */
+          margin: 0 !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+        body, html, #root, main {
+          background-color: white !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          height: auto !important;
+          overflow: visible !important;
+        }
+        .eccd-official-page {
+          page-break-after: always !important;
+          break-after: page !important;
+          display: flex !important;
+          position: relative !important;
+          box-sizing: border-box !important;
+          background-color: white !important;
+          -webkit-print-color-adjust: exact;
+          margin: 0 !important;
+          padding: 0 !important;
+          box-shadow: none !important;
+          overflow: hidden !important; /* Contain the scaled data within page boundaries */
+        }
+        /* Ensure table text remains crisp during print scaling */
+        .eccd-official-table {
+          image-rendering: -webkit-optimize-contrast;
+          transform-style: preserve-3d;
+        }
+      }
+      .print-only {
+        display: none;
+      }
+      .eccd-official-table {
+        border-collapse: collapse !important;
+        width: 100%;
+        border: 1px solid black !important;
+      }
+      .eccd-official-table th, 
+      .eccd-official-table td {
+        border: 1px solid black !important;
+        padding: 1px 3px !important;
+        line-height: 1.1;
+      }
+      .eccd-official-table th {
+        background-color: #f8fafc !important;
+        -webkit-print-color-adjust: exact;
+      }
+      
+      /* Base landscape page sizing for screen view */
+      .eccd-official-page {
+        width: 297mm;
+        height: 210mm;
+        padding: 5mm;
+        position: relative;
+        background: white;
+      }
+
+      .no-print-scroll-fix {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
